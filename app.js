@@ -9,6 +9,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// db config
+const DB = require('./models/config');
+const expressSession = require('express-session');
+const passport = require('passport');
+const userModel = require('./models/userModel');
+const flash = require('connect-flash');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -19,6 +26,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(expressSession({
+  saveUninitialized:false,
+  resave:false,
+  secret:"gj fsjf s jhfdfj sdj"
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(userModel.serializeUser());
+passport.deserializeUser(userModel.deserializeUser());
+
+app.use(flash())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

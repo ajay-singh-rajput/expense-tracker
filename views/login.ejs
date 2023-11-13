@@ -1,0 +1,48 @@
+<%- include('partials/header')%>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+  <div class="loginDiv">
+
+    <section class="container">
+      <div class="login-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+          <img src="https://bizbill.xyz/uploads/big/hero-img_big-500x500.png" alt="illustration" class="illustration" />
+          <!-- <img src="https://drive.google.com/uc?export=view&id=1bKgdKUQ2Uhx6rjY7LNTuBjLfZhJxKVSq" alt="illustration" class="illustration" /> -->
+          <h1 class="opacity">LOGIN</h1>
+          <form method="post" action="/login">
+            
+            <input type="text" name="username" placeholder="USERNAME" />
+            
+            <input type="password" name="password" placeholder="PASSWORD" />
+            <%if(loginCheck){ %>
+                <span class="alert"><%= loginCheck %></span>
+            <%} %>
+            <button class="opacity">SUBMIT</button>
+          </form>
+          <div class="register-forget opacity">
+            <a href="/register">SIGNUP</a>
+            <a href="/forgot">FORGOT PASSWORD</a>
+          </div>
+        </div>
+        <div class="circle circle-two"></div>
+      </div>
+      <div class="theme-btn-container"></div>
+    </section>
+  </div>
+  <%let rsclass = ''%>
+  <%if(rs.length == 0){%>
+  <%  rsclass = 'hideji'%>
+  <%}%>
+  <div class="popUpDiv <%= rsclass %>" ><div id="success" >
+    <h3><i class="fa-solid fa-circle-check fa-2xl"></i></h3>
+    <h4>Welcome Aboard!</h4>
+    <p>Your account has been succesfully created!</p>
+    <button id="successBtn" type="button" class="btn" >Let's Go!</button>
+  </div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="/javascripts/login.js"></script>
+<%- include('partials/footer')%>
+</body>
+</html>
