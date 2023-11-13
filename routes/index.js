@@ -7,6 +7,7 @@ const categoryModel = require('../models/categoryModel')
 const expenseModel = require('../models/expenseModel');
 const passport = require('passport');
 const passportLocal = require('passport-local');
+const gmailCred = require('../gmailCred');
 
 passport.use(new passportLocal(userLogin.authenticate()));
 
@@ -117,12 +118,12 @@ async function sendOtpFunction(email, otp, res){
     host:'smpt.gmail.com',
     port:465,
     auth:{
-      user:"ajayindiandev@gmail.com",
-      pass:"xfvk ulcj hpwc uxkq"
+      user:gmailCred.gmail,
+      pass:gmailCred.pass
     }
   })
   const mailOptions = {
-    from:'Telegram Clone <ajayindiandev@gmail.com>',
+    from:`Telegram Clone <${gmailCred.gmail}>`,
     to:email,
     subject:'Reset password OTP',
     html:`<h1>Your OTP is:- ${otp}</h1>`
