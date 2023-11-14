@@ -8,12 +8,15 @@
         <div class="form-container">
           <img src="/images/forgot.png" alt="illustration" class="illustration" />
           <h1 class="opacity">OTP</h1>
-          <form action="/otp" method="post">
+          <form action="/otp/<%= userMail%>" method="post">
+            <p class="countdown"> Resend OTP in <span id="countdowntimer">30 </span> Seconds</p>
             <input type="number" name="otp" placeholder="****" />
+              <span class="alert"><%= wo %></span>
             <button class="opacity">SUBMIT</button>
           </form>
           <div class="register-forget opacity">
             <a href="/login">LOGIN</a>
+            <a href="/forgot" class="hideji" id="resend" >Resend</a>
           </div>
         </div>
         <div class="circle circle-two"></div>
@@ -23,5 +26,18 @@
   </div>
 
 <%- include('partials/footer')%>
+<script>
+  var timeleft = 40;
+  document.querySelector('#resend').style.display = 'none'
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+      document.querySelector('#resend').style.display = 'initial'
+      document.querySelector('.countdown').style.display = 'none'
+    }
+    },1000);
+</script>
 </body>
 </html>

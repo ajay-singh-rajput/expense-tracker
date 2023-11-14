@@ -1,0 +1,55 @@
+<div class="totalSpendDiv">
+    <span class="totalbusgetspn">
+      <p class="pTag">Total Budget</p>
+      <p class="amountShow green"><strong>Rs.</strong><span class="redShow">12554</span> </p>
+    </span>
+    <span class="totalspendspn">
+      <p class="pTag">Total Spend</p>
+      <p class="amountShow red"><strong>Rs.</strong> <span class="greenShow">12554</span></p>
+    </span>
+  </div>
+
+  <style>
+    .totalSpendDiv{
+  width: 400px;
+  height: 40px;
+  position: fixed;
+  top: 77px;
+  /* background-color: #aaa; */
+  left: 50%;
+  transform: translateX(-50%);
+  /* position: relative; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 0 20px;
+  color: #404040;
+}
+.totalSpendDiv >span{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.totalbusgetspn{
+    background-color: #eeaaaa;
+}
+.totalspendspn{
+    background-color: #aec;
+}
+.pTag{
+    font-weight: 700;
+}
+.redShow{
+    color: rgb(156, 0, 0);
+}
+.greenShow{
+    color: green;
+}
+  </style>

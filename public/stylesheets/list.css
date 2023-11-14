@@ -1,0 +1,116 @@
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #262433;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1150px;
+    padding: 20px;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    background-color: #ddd;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.container .card:hover .circle {
+    clip-path: circle(600px);
+
+}
+
+.container .card:hover .content p {
+    color: #fff;
+}
+
+.container .card:hover .content a {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2),
+        -1px -1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.container .card .content a:active {
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1),
+        inset 5px 5px 5px rgba(0, 0, 0, 0.04),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.07),
+        inset -1px -1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.container .card .circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    clip-path: circle(180px at center 0);
+    text-align: center;
+    transition: 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .card h2 {
+    color: #fff;
+    font-size: 1.5vmax;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+
+.container .card .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .content p {
+    color: #666;
+    transition: 0.5s ease-in-out;
+}
+
+.container .card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.8s ease-in-out;
+}
+
+.content {
+    width: 100%;
+}
+
+.btnHolder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.white {
+    color: #ccc;
+}
+
+.fs12px {
+    color: #aec;
+    font-size: 12px;
+}

@@ -1,10 +1,19 @@
 <link rel="stylesheet" href="/stylesheets/nav.css">
 <%let home = ''%>
 <%let login = ''%>
+<%let create = ''%>
+<%let search = ''%>
+<%let list = ''%>
 <%if(navCheck === 'home'){%>
 <%    home = 'active'%>
 <%} else if(navCheck === 'login'){%>
 <%    login = 'active'%>
+<%} else if(navCheck === 'create'){%>
+  <% create = 'active' %>
+<%} else if(navCheck === 'search'){%>
+<%  search = 'active'%>
+<%} else if(navCheck === 'list'){%>
+<%  list = 'active'%>
 <%}%>
 
 <div class="navigation">
@@ -17,35 +26,35 @@
         </a>
       </li>
       <li class="list <%= login%>">
-        <a href="/login">
+        <a href="/profile">
           <span class="icon">
             <i class="ri-user-5-line"></i>
           </span>
         </a>
       </li>
-      <li class="list">
+      <li class="list <%= create %>">
         <a href="/create">
           <span class="icon">
             <i class="ri-add-circle-line"></i>
           </span>
         </a>
       </li>
-      <li class="list">
+      <li class="list <%= search %>">
         <a href="/search">
           <span class="icon">
             <i class="ri-search-2-line"></i>
           </span>
         </a>
       </li>
-      <li class="list">
-        <a href="#">
+      <li class="list <%= list %>">
+        <a href="/list">
           <span class="icon">
-            <ion-icon name="settings-outline"></ion-icon>
+            <i class="ri-file-list-3-line"></i>
           </span>
         </a>
       </li>
       <div class="indicator"><span></span></div>
     </ul>
   </div>
-  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
   <script src="/javascripts/nav.js"></script>

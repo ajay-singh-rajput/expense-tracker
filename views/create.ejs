@@ -1,0 +1,30 @@
+<%- include('partials/header')%>
+<link rel="stylesheet" href="/stylesheets/create.css">
+  <div class="formContainer">
+    <form action="/create" method="post">
+        <h1 style="text-align: start; width: 100%;">Creating Expense</h1>
+        <span class="inputHolder">
+            <i class="ri-star-s-line"> Title</i>
+            <input type="text" name="title" placeholder="Title...">
+        </span>
+        <span class="inputHolder"><i class="ri-money-dollar-circle-line"> Amount</i> <input type="number" name="amount" placeholder="Put Amount of spend"></span>
+        <span class="inputHolder">
+            <i class="ri-list-radio"> Category</i>
+            <select name="category" id="category">
+                <option value="">Choose Category</option>
+               <% categoryList.forEach(function(cate){ %>
+                    <option value="<%= cate %>"><%= cate %></option>
+               <% }) %>
+            </select>
+        </span>
+        <span class="inputHolder">
+            <i class="ri-edit-line"> Description</i>
+            <textarea name="description" id="" placeholder="description..."></textarea>
+        </span>
+        <button class="submit">SUBMIT</button>
+    </form>
+  </div>
+
+<%- include('partials/footer')%>
+</body>
+</html>

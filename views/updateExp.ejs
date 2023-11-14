@@ -1,0 +1,30 @@
+<%- include('partials/header')%>
+<link rel="stylesheet" href="/stylesheets/create.css">
+  <div class="formContainer">
+    <form action="/update/<%= expenseData._id %>" method="post">
+        <h1 style="text-align: start; width: 100%;">Update Expense</h1>
+        <span class="inputHolder">
+            <i class="ri-star-s-line"> Title</i>
+            <input type="text" name="title" placeholder="Title..." value="<%= expenseData.title %>">
+        </span>
+        <span class="inputHolder"><i class="ri-money-dollar-circle-line"> Amount</i> <input type="number" name="amount" placeholder="Put Amount of spend" value="<%= expenseData.amount %>"></span>
+        <span class="inputHolder">
+            <i class="ri-list-radio"> Category</i>
+            <select name="category" id="category">
+                <option value="<%= expenseData.category %>"><%= expenseData.category %></option>
+               <% categoryList.forEach(function(cate){ %>
+                    <option value="<%= cate %>"><%= cate %></option>
+               <% }) %>
+            </select>
+        </span>
+        <span class="inputHolder">
+            <i class="ri-edit-line"> Description</i>
+            <textarea name="description" id="" placeholder="description..."><%= expenseData.description %></textarea>
+        </span>
+        <button class="submit">Update</button>
+    </form>
+  </div>
+
+<%- include('partials/footer')%>
+</body>
+</html>

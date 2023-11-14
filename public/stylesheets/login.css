@@ -12,8 +12,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "poppins";
-    /* background: var(--background); */
-    /* color: var(--color); */
     letter-spacing: 1px;
     transition: background 0.2s ease;
     -webkit-transition: background 0.2s ease;
@@ -61,14 +59,14 @@
     padding: 14.5px;
     width: 100%;
     margin: 2rem 0;
-    color: var(--color);
     outline: none;
-    background-color: #9191911f;
     border: none;
     border-radius: 5px;
     font-weight: 500;
     letter-spacing: 0.8px;
     font-size: 15px;
+    color: var(--color);
+    background-color: #9191911f;
     backdrop-filter: blur(15px);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -305,4 +303,7 @@ border: 1px solid rgba(170,238,204,0.075);
 }
 .hideji{
   display: none;
+}
+.countdown{
+  color: #59b660;
 }

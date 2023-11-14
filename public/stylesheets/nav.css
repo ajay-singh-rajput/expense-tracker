@@ -27,10 +27,11 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   position: fixed;
-  top: 20px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%)
 }
+
 .navigation ul {
   display: flex;
   width: 350px;

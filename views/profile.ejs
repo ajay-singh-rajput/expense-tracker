@@ -1,0 +1,35 @@
+<%- include('partials/header')%>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+       
+<section>
+
+    <div class="box1 box">
+      <div class="content">
+        <!-- <div class="image">
+          <img src="https://i.postimg.cc/bryMmCQB/profile-image.jpg" alt="Profile Image">
+        </div> -->
+        <div class="text">
+          <p class="name"><%= user.username %></p>
+          <!-- <p class="job_title">UI / UX Designer</p> -->
+          <p class="job_discription"><%= user.email %></p>
+        </div>
+        <div class="icons">
+          
+        </div>
+        <div class="button">
+          <div>
+            <button class="message" type="button">Update Details</button>
+          </div>
+          <div>
+            <button class="connect" type="button">Reset Password</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  
+  
+<%- include('partials/footer')%>
+</body>
+</html>

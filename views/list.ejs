@@ -1,0 +1,39 @@
+<%- include('partials/header')%>
+  <link rel="stylesheet" href="/stylesheets/list.css">
+<div class="container">
+
+    <%function extractDateMonthYear(dateString) {%>
+    <%    const dateObject = new Date(dateString);%>
+    <%    const options = { year: 'numeric', month: 'long', day: 'numeric' };%>
+    <%    const formattedDate = dateObject.toLocaleDateString('en-US', options);%>
+    <%    return formattedDate;%>
+    <%  }%>
+    <% let totalSpend = 0 %>
+
+    <% userExp.forEach(function(exp, i){ %>%>
+        <div class="card">
+            
+            <div class="circle">
+              <h2><%= i + 1 %>. <%= exp.title %></h2>
+              <span class="white"><%= extractDateMonthYear(exp.date) %></span>
+              <span class="white fs12px"><%= exp.category %></span>
+            </div>
+            <div class="content">
+            <p><strong>Rs. </strong> <%= exp.amount %></p>
+              <p><strong>Description</strong> <%= exp.description %></p>
+              
+              <span class="btnHolder">
+                  <a href="/update/<%= exp._id %>">Update</a>
+                  <a href="/delete/<%= exp._id %>">Delete</a>
+                </span>
+            </div>
+          </div>
+          
+    <%})%>
+    
+    
+    
+  </div>
+<%- include('partials/footer')%>
+</body>
+</html>
