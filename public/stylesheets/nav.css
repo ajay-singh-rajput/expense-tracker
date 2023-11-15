@@ -1,20 +1,16 @@
 
  @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  
   font-family: "Poppins", sans-serif;
 }
 :root {
   --clr: #262433;
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   background: var(--clr);
-  min-height: 100vh;
+  
 }
 .navigation {
   width: 420px;
@@ -34,6 +30,7 @@ body {
 
 .navigation ul {
   display: flex;
+  justify-content: space-between;
   width: 350px;
 }
 .navigation ul li {
@@ -104,13 +101,13 @@ body {
   z-index: -1;
 }
 .navigation ul li:nth-child(2).active ~ .indicator {
-  transform: translateX(calc(70px * 1));
+  transform: translateX(calc(93px * 1));
 }
 .navigation ul li:nth-child(3).active ~ .indicator {
-  transform: translateX(calc(70px * 2));
+  transform: translateX(calc(93px * 2));
 }
 .navigation ul li:nth-child(4).active ~ .indicator {
-  transform: translateX(calc(70px * 3));
+  transform: translateX(calc(93px * 3));
 }
 .navigation ul li:nth-child(5).active ~ .indicator {
   transform: translateX(calc(70px * 4));

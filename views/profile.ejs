@@ -1,33 +1,75 @@
 <%- include('partials/header')%>
   <link rel="stylesheet" href="/stylesheets/profile.css">
-       
-<section>
+  <main>
 
     <div class="box1 box">
       <div class="content">
-        <!-- <div class="image">
-          <img src="https://i.postimg.cc/bryMmCQB/profile-image.jpg" alt="Profile Image">
-        </div> -->
+        
         <div class="text">
           <p class="name"><%= user.username %></p>
-          <!-- <p class="job_title">UI / UX Designer</p> -->
           <p class="job_discription"><%= user.email %></p>
         </div>
-        <div class="icons">
-          
-        </div>
+        
         <div class="button">
           <div>
-            <button class="message" type="button">Update Details</button>
+            <a href="/addBudget"><button class="message" type="button">Update Budget</button></a>
           </div>
           <div>
-            <button class="connect" type="button">Reset Password</button>
+            <a href="/resetPassword"><button class="connect" type="button">Reset Password</button></a>
+            
           </div>
         </div>
       </div>
     </div>
   
-  </section>
+  <div class="main">
+    <% let bdg = 0 %>
+    <% let per = 0 %>
+    <% if(budget){ %>
+        <% bdg = budget %>
+    <% } %>
+    <% if(totalSpend){ %>
+      <%let rem = bdg -totalSpend %>
+      <%per = 100 - ((rem/bdg) *100)%> 
+      <%} %>
+    
+    <div class="card">
+        <div class="card-left">
+            <h4>Overview</h4>
+            <div class="score">
+              <% if(totalSpend){ %>
+      
+                <h1><%= totalSpend %> </h1>
+        
+                <%} else {%>
+                <h1>0</h1>
+                <% } %>
+                <span>of <%= bdg %></span>
+            </div>
+            <div class="score-content">
+                <p>You spend <%= Math.floor(per) %>% of the total budget.</p>
+            </div>
+        </div>
+        <div class="card-right">
+            <h2>Summary</h2>
+            <ul class="summary-lists">
+             <% userCatExp.forEach(function(exp){ %>
+                <li>
+                  <div class="li-left">
+                      <span class="white"><%= exp.name %></span>
+                  </div>
+                  <div class="li-right">
+                      <p><b><%= exp.amount %></b></p>
+                  </div>
+              </li>
+              <%})%>
+                
+                
+        </div>
+    </div>
+  </div>
+
+</main>
   
   
 <%- include('partials/footer')%>

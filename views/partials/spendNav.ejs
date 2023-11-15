@@ -1,15 +1,33 @@
-<div class="totalSpendDiv">
-    <span class="totalbusgetspn">
-      <p class="pTag">Total Budget</p>
-      <p class="amountShow green"><strong>Rs.</strong><span class="redShow">12554</span> </p>
-    </span>
-    <span class="totalspendspn">
-      <p class="pTag">Total Spend</p>
-      <p class="amountShow red"><strong>Rs.</strong> <span class="greenShow">12554</span></p>
-    </span>
-  </div>
+<% let bd = 0 %>
+<% if(budget){ %>
+    <% bd = budget %>
+<% } %>
+<% if(totalSpend){ %>
+    <div class="totalSpendDiv">
+        <span class="totalbusgetspn">
+          <p class="pTag">Total Budget</p>
+          <p class="amountShow green"><strong>Rs.</strong><span class="redShow"><%= bd %></span> </p>
+        </span>
+        <span class="totalspendspn">
+          <p class="pTag">Total Spend</p>
+          <p class="amountShow red"><strong>Rs.</strong> <span class="greenShow"><%= totalSpend %></span></p>
+        </span>
+        <a href="/logOut" class="logOut"><i class="ri-logout-box-line"></i>Log-Out</a>
+      </div>
+      
+<%}%>
+
 
   <style>
+    .logOut{
+      position: absolute;
+      top: 25%;
+      right: 50%;
+      background-color: #fff;
+      padding: 5px 10px;
+      border-radius: 10px;
+      transform: translateX(50%);
+    }
     .totalSpendDiv{
   width: 400px;
   height: 40px;
@@ -25,11 +43,11 @@
   z-index: 1;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   color: #404040;
 }
 .totalSpendDiv >span{
-    width: 50%;
+    width: 37%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -38,18 +56,20 @@
     border-radius: 20px;
 }
 .totalbusgetspn{
-    background-color: #eeaaaa;
+    background-color: #fad1d1;
 }
 .totalspendspn{
-    background-color: #aec;
+    background-color: rgb(211, 255, 233);
 }
 .pTag{
     font-weight: 700;
 }
 .redShow{
     color: rgb(156, 0, 0);
+    font-weight: 700;
 }
 .greenShow{
     color: green;
+    font-weight: 700;
 }
   </style>
