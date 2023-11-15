@@ -2,12 +2,8 @@
   "name": "expense-tracker",
   "version": "0.0.0",
   "private": true,
-  "main":"index.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "connect-flash": "^0.1.1",
