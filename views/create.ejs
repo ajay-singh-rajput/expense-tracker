@@ -5,12 +5,12 @@
         <h1 style="text-align: start; width: 100%;">Creating Expense</h1>
         <span class="inputHolder">
             <i class="ri-star-s-line"> Title</i>
-            <input type="text" name="title" placeholder="Title...">
+            <input type="text" name="title" placeholder="Title..." required>
         </span>
-        <span class="inputHolder"><i class="ri-money-dollar-circle-line"> Amount</i> <input type="number" name="amount" placeholder="Put Amount of spend"></span>
+        <span class="inputHolder"><i class="ri-money-dollar-circle-line"> Amount</i> <input required type="number" name="amount" placeholder="Put Amount of spend"></span>
         <span class="inputHolder">
             <i class="ri-list-radio"> Category</i>
-            <select name="category" id="category">
+            <select name="category" id="category" required>
                 <option value="">Choose Category</option>
                <% categoryList.forEach(function(cate){ %>
                     <option value="<%= cate %>"><%= cate %></option>
